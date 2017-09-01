@@ -2,6 +2,8 @@
 
 ### 搜索功能<br>
 ----
+##### 效果图<br>
+![](search.jpg)
 ##### xml设置<br>
 ```xml
 <EditText
@@ -37,6 +39,8 @@ nameInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
 ### 验证功能<br>
 ----
+##### 效果图<br>
+![](search.jpg)
 ##### java代码<br>
 ```java
 
