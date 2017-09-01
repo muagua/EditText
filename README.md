@@ -1,8 +1,8 @@
 # EditText
-Android EditText设置键盘搜索和错误验证<br>
 
-##### 搜索功能只需xml设置即可<br>
+### 搜索功能<br>
 ----
+##### xml设置<br>
 ```xml
 <EditText
      android:id="@+id/name_input"
@@ -13,8 +13,31 @@ Android EditText设置键盘搜索和错误验证<br>
 ```
 android:imeOptions设置成actionSearch为搜索功能，设置成actionDone确定功能，
 一定要用android:singleLine="true"，不能用android:maxLines="1"，否则无效<br>
-##### 验证功能java代码<br>
+
+##### java代码<br>
+```java
+nameInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+            if (i == EditorInfo.IME_ACTION_SEARCH) {
+                    // 先隐藏键盘
+                    ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
+                            .hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                                    InputMethodManager.HIDE_NOT_ALWAYS);
+                                    
+                       checkInput();//执行搜索，此处为验证
+                    
+                    return true;
+                }
+                return false;
+            }
+        });
+```
+一定要加if (i == EditorInfo.IME_ACTION_SEARCH)判断，要不然checkInput()会执行两遍
+
+### 验证功能<br>
 ----
+##### java代码<br>
 ```java
 
 EditText nameInput;
