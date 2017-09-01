@@ -51,8 +51,8 @@ private void checkInput() {
         View focusView = null;
         
         if (TextUtils.isEmpty(name)) {
-            nameInput.setError("姓名不能为空");
-            focusView = nameInput;
+            nameInput.setError("姓名不能为空");//设置错误提示内容
+            focusView = nameInput;
             cancel = true;
         } 
 
