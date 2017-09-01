@@ -35,7 +35,7 @@ nameInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             }
         });
 ```
-一定要加if (i == EditorInfo.IME_ACTION_SEARCH)判断，要不然checkInput()会执行两遍
+不加if (i == EditorInfo.IME_ACTION_SEARCH)判断，checkInput()会执行两遍
 
 ### 验证功能<br>
 ----
