@@ -48,7 +48,7 @@ EditText nameInput;
 
 private void checkInput() {
         nameInput.setError(null);
-        String name = objectNameInput.getText().toString();
+        String name = nameInput.getText().toString();
 
         boolean cancel = false;
         
