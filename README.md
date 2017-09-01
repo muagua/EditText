@@ -40,7 +40,7 @@ nameInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 ### 验证功能<br>
 ----
 ##### 效果图<br>
-![](search.jpg)
+![](check.jpg)
 ##### java代码<br>
 ```java
 
